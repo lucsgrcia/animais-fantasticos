@@ -1,15 +1,17 @@
 export default function initAccordion() {
-  const accordionList = document.querySelectorAll("[data-anime='accordion'] dt");
+  const accordionList = document.querySelectorAll(
+    "[data-anime='accordion'] dt",
+  );
   const activeClass = "ativo";
+
+  function activeAccordion(element) {
+    this.classList.toggle(activeClass);
+    this.nextElementSibling.classList.toggle(activeClass);
+  }
 
   if (accordionList.length) {
     accordionList[0].classList.add(activeClass);
     accordionList[0].nextElementSibling.classList.toggle(activeClass);
-
-    function activeAccordion(element) {
-      this.classList.toggle(activeClass);
-      this.nextElementSibling.classList.toggle(activeClass);
-    }
 
     accordionList.forEach((element) => {
       element.addEventListener("click", activeAccordion);

@@ -3,8 +3,7 @@ export default function initSmoothScroll() {
     "[data-menu='smooth'] a[href^='#']",
   );
 
-  if (linksInternos.length) {
-    function scrollToSection(event) {
+   function scrollToSection(event) {
       event.preventDefault();
       const href = event.currentTarget.getAttribute("href");
       const section = document.querySelector(href);
@@ -13,6 +12,9 @@ export default function initSmoothScroll() {
         block: "start",
       });
     }
+
+  if (linksInternos.length) {
+   
 
     linksInternos.forEach((element) => {
       element.addEventListener("click", scrollToSection);
