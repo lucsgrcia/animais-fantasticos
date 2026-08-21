@@ -11,7 +11,7 @@ export default class Accordion {
 
   addAccordionEvent() {
     this.accordionList.forEach((element) => {
-      element.addEventListener("click", () => this.toggleAccordion(item));
+      element.addEventListener("click", () => this.toggleAccordion(element));
     });
   }
 
