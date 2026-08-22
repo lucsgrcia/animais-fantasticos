@@ -1,5 +1,5 @@
 import SmoothScroll from "./modules/scroll-suave.js";
-import initAnimationScroll from "./modules/scroll-animacao.js";
+import ScrollAnima from "./modules/scroll-anima.js";
 import Accordion from "./modules/accordion.js";
 import TabNav from "./modules/tab-nav.js";
 import Modal from "./modules/modal.js";
@@ -22,7 +22,8 @@ const tabNav = new TabNav(
 );
 tabNav.init();
 
-initAnimationScroll();
+const scrollAnima = new ScrollAnima("[data-anime='scroll']");
+scrollAnima.init();
 
 const modal = new Modal(
   "[data-modal='abrir']",
